@@ -7,29 +7,18 @@ namespace FirstApp
         static void Main(string[] args)
         {
             System.Console.WriteLine("Hello World!");
-            TestClass testClass = new TestClass(3);
+            TestClass testClass = new TestClass();
+            testClass.Value = 4;
             Console.WriteLine(testClass.Value);
         }
     }
 
     class TestClass
     {
-        int value = 0;
-        public TestClass(int value)
-        {
-            this.value = value;
-        }
-
         public int Value
         {
-            get
-            {
-                return this.value;
-            }
-            internal set
-            {
-                this.value = value;
-            }
+            get;
+            internal set;
         }
     }
 }
