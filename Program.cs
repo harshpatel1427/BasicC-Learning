@@ -6,19 +6,27 @@ namespace FirstApp
     {
         static void Main(string[] args)
         {
-            System.Console.WriteLine("Hello World!");
-            TestClass testClass = new TestClass();
-            testClass.Value = 4;
-            Console.WriteLine(testClass.Value);
+            System.Console.WriteLine("Printing Fibonaci Number");
+            Program.GetFibonaci(10);
         }
-    }
 
-    class TestClass
-    {
-        public int Value
+        static public void GetFibonaci(int num)
         {
-            get;
-            internal set;
+            int n1 = 0;
+            int n2 = 1;
+            int ans = 0;
+            if (num == 0 || num == 1)
+                Console.WriteLine(num);
+            else
+            {
+                for (int i = 2; i < num; i++)
+                {
+                    ans = n1 + n2;
+                    n1 = n2;
+                    n2 = ans;
+                    Console.WriteLine(ans);
+                }
+            }
         }
     }
 }
