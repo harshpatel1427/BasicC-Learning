@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace FirstApp
 {
@@ -6,26 +7,21 @@ namespace FirstApp
     {
         static void Main(string[] args)
         {
+            /* Printing fibonaci number */
             System.Console.WriteLine("Printing Fibonaci Number");
-            Program.GetFibonaci(10);
-        }
+            Fibonaci fibonaci = new Fibonaci();
+            fibonaci.GetFibonaci(10);
 
-        static public void GetFibonaci(int num)
-        {
-            int n1 = 0;
-            int n2 = 1;
-            int ans = 0;
-            if (num == 0 || num == 1)
-                Console.WriteLine(num);
-            else
+            /* solving two sum problem */
+            System.Console.WriteLine("Printing TWO SUM for target number...");
+            int[] nums = { 1, 2, 3, 5, 8, 10 };
+            int target = 18;
+            TwoSum twoSum = new TwoSum();
+            List<int> ans = twoSum.FindTwoSum(nums, target);
+
+            foreach (int n in ans)
             {
-                for (int i = 2; i < num; i++)
-                {
-                    ans = n1 + n2;
-                    n1 = n2;
-                    n2 = ans;
-                    Console.WriteLine(ans);
-                }
+                Console.WriteLine(n);
             }
         }
     }
